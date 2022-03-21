@@ -70,6 +70,7 @@ def get_shapes(model, input_shape):
 
 
 class MIRO(Algorithm):
+    """Mutual-Information Regularization with Oracle"""
     def __init__(self, input_shape, num_classes, num_domains, hparams, **kwargs):
         super().__init__(input_shape, num_classes, num_domains, hparams)
         self.pre_featurizer = URFeaturizer(
@@ -112,7 +113,8 @@ class MIRO(Algorithm):
         loss = F.cross_entropy(logit, all_y)
 
         # MIRO
-        _, pre_feats = self.pre_featurizer(all_x, ret_feats=True)
+        with torch.no_grad():
+            _, pre_feats = self.pre_featurizer(all_x, ret_feats=True)
 
         reg_loss = 0.
         for f, pre_f, mean_enc, var_enc in misc.zip_strict(
@@ -136,7 +138,5 @@ class MIRO(Algorithm):
         return self.network(x)
 
     def get_forward_model(self):
-        """Get forward model except for oracle (pre-trained) model
-        """
         forward_model = ForwardModel(self.network)
         return forward_model
