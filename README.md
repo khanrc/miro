@@ -5,7 +5,7 @@ Official PyTorch implementation of **Domain Generalization by Mutual-Information
 Junbum Cha, Kyungjae Lee, Sungrae Park, Sanghyuk Chun.
 
 <p align="center">
-    <img src="./assets/algorithm.png" width="75%" />
+    <img src="./assets/algorithm.png" width="78%" />
 </p>
 
 
