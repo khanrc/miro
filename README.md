@@ -1,6 +1,6 @@
 # MIRO: Mutual Information Regularization with Oracle
 
-Official PyTorch implementation of **Domain Generalization by Mutual-Information Regularization with Pre-trained Models**.
+Official PyTorch implementation of [Domain Generalization by Mutual-Information Regularization with Pre-trained Models](https://arxiv.org/abs/2203.10789).
 
 Junbum Cha, Kyungjae Lee, Sungrae Park, Sanghyuk Chun.
 
@@ -149,6 +149,18 @@ python train_all.py DomainNet --data_dir /my/dataset/path --algorithm MIRO --dat
 <p align="center">
     <img src="./assets/main_results.png" width="70%" />
 </p>
+
+
+## Citation
+
+```
+@article{cha2022miro,
+  title={Domain Generalization by Mutual-Information Regularization with Pre-trained Models},
+  author={Junbum Cha and Kyungjae Lee and Sungrae Park and Sanghyuk Chun},
+  journal={arXiv preprint arXiv:2203.10789},
+  year={2022}
+}
+```
 
 
 ## License
