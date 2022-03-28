@@ -1,4 +1,4 @@
-# Copyright (c) kakaobrain. All Rights Reserved.
+# Copyright (c) Kakao Brain. All Rights Reserved.
 
 import torch
 import torch.nn as nn
