@@ -240,20 +240,21 @@ def train(test_envs, args, hparams, n_steps, checkpoint_freq, logger, writer, ta
     # find best
     logger.info("---")
     records = Q(records)
-    oracle_best = records.argmax("test_out")["test_in"]
-    iid_best = records.argmax("train_out")["test_in"]
+    te_val_best = records.argmax("test_out")["test_in"]
+    tr_val_best = records.argmax("train_out")["test_in"]
     last = records[-1]["test_in"]
 
     in_key = "train_out"
-    iid_best_indomain = records.argmax("train_out")[in_key]
+    tr_val_best_indomain = records.argmax("train_out")[in_key]
     last_indomain = records[-1][in_key]
 
+    # NOTE for clearity, report only training-domain validation results.
     ret = {
-        "oracle": oracle_best,
-        "iid": iid_best,
-        "last": last,
-        "last (inD)": last_indomain,
-        "iid (inD)": iid_best_indomain,
+        #  "test-domain validation": te_val_best,
+        "training-domain validation": tr_val_best,
+        #  "last": last,
+        #  "last (inD)": last_indomain,
+        #  "training-domain validation (inD)": tr_val_best_indomain,
     }
 
     # Evaluate SWAD
