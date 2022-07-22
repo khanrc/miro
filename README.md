@@ -69,7 +69,7 @@ Our searched HPs:
 | Learning rate | 3e-5 | 1e-5 | 3e-5       | 3e-5           | 3e-5      |
 | Dropout       | 0.0  | 0.5  | 0.1        | 0.0            | 0.1       |
 | Weight decay  | 0.0  | 1e-6 | 1e-6       | 1e-4           | 0.0       |
-| Lambda        | 0.01 | 0.01 | 0.1        | 0.1            | 0.1       |
+| $\lambda$     | 0.01 | 0.01 | 0.1        | 0.1            | 0.1       |
 
 
 ### Combination with SWAD
@@ -150,6 +150,17 @@ python train_all.py DomainNet --data_dir /my/dataset/path --algorithm MIRO --dat
     <img src="./assets/main_results.png" width="70%" />
 </p>
 
+### Additional results
+
+| | PACS | VLCS | OfficeHome | TerraIncognita | DomainNet | Avg. |
+| - | - | - | - | - | - | - |
+| MIRO + SWAD (B=16) | 96.8 | 81.7 | 83.3 | 64.3 | 60.7 |  77.3 |
+| MIRO + SWAD (B=32) | 97.5 | 81.6 | 84.2 | 65.5 | 60.8 |  77.9 |
+
+In **pushing the limits** experiments of the paper, we use the batch size of 16 due to the limitation of computational resources.
+Afterwards, we find that the batch size of 32 improves the overall performance as shown in this table. 
+Note that this experiments tune $\lambda$ only, so there is room for further performance improvement by intensive HP tuning.
+
 
 ## Citation
 
@@ -157,7 +168,7 @@ python train_all.py DomainNet --data_dir /my/dataset/path --algorithm MIRO --dat
 @article{cha2022miro,
   title={Domain Generalization by Mutual-Information Regularization with Pre-trained Models},
   author={Junbum Cha and Kyungjae Lee and Sungrae Park and Sanghyuk Chun},
-  journal={arXiv preprint arXiv:2203.10789},
+  journal={European Conference on Computer Vision},
   year={2022}
 }
 ```
