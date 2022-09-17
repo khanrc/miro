@@ -144,7 +144,7 @@ python train_all.py DomainNet --data_dir /my/dataset/path --algorithm MIRO --dat
 </details>
 
 <details>
-<summary> Searched $$\lambda$$ of various pre-training methods </summary>
+<summary> Searched $\lambda$ of various pre-training methods </summary>
 
 | | PACS | VLCS | OfficeHome | TerraIncognita | DomainNet |
 | - | - | - | - | - | - |
