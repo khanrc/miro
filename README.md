@@ -1,4 +1,4 @@
-# MIRO: Mutual Information Regularization with Oracle
+# MIRO: Mutual Information Regularization with Oracle (ECCV'22)
 
 Official PyTorch implementation of [Domain Generalization by Mutual-Information Regularization with Pre-trained Models](https://arxiv.org/abs/2203.10789).
 
@@ -143,6 +143,19 @@ python train_all.py DomainNet --data_dir /my/dataset/path --algorithm MIRO --dat
 
 </details>
 
+<details>
+<summary> Searched $$\lambda$$ of various pre-training methods </summary>
+
+| | PACS | VLCS | OfficeHome | TerraIncognita | DomainNet |
+| - | - | - | - | - | - |
+| Barlow twins  | 0.001 | 0.01 | 0.1 | 0.01 | 0.01 |
+| MoCo v3       | 0.001 | 0.01 | 0.1 | 0.01 | 0.01 |
+| CLIP (ResNet) | 0.1 | 1.0 | 1.0 | 1.0 | 0.1 |
+| CLIP (ViT)    | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
+| SWAG (RegNet) | 0.1 | 0.01 | 0.1 | 0.01 | 0.1 |
+
+</details>
+
 
 ## Main Results
 
@@ -168,7 +181,7 @@ Note that this experiments tune $\lambda$ only, so there is room for further per
 @article{cha2022miro,
   title={Domain Generalization by Mutual-Information Regularization with Pre-trained Models},
   author={Junbum Cha and Kyungjae Lee and Sungrae Park and Sanghyuk Chun},
-  journal={European Conference on Computer Vision},
+  journal={European Conference on Computer Vision (ECCV)},
   year={2022}
 }
 ```
